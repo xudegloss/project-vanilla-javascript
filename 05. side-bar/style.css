@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Instrument Serif", serif;
+}
+
+body {
+  background-color: #f1f5f8;
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#sidebar__container {
+  background-color: #ffffff;
+  /* viewport 꽉 채우는 방법 */
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+#header {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px 20px;
+  height: 10vh;
+}
+
+#title {
+  text-shadow: 1px 5px 3px #c4c4c4;
+}
+
+#title span {
+  color: #49a6e9;
+}
+
+#title__btn {
+  border: none;
+  background-color: #ffffff;
+  width: 70px;
+  height: 70px;
+  transition: all ease-in-out 1s;
+  transform: rotate(-360deg);
+}
+
+#container__items {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.container__item {
+  padding-left: 20px;
+  height: 10vh;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container__item:hover {
+  background-color: #afd3e2;
+  transition: all ease-in-out 0.5s;
+}
+
+/* 글자 선택 안 해도 스타일 변경하도록 만들기 위하여 */
+
+.container__item div {
+  width: 400px;
+}
+
+.container__item div:hover {
+  color: #070a52;
+  transform: translateX(20px);
+  transition: all ease-in-out 0.7s;
+  width: 400px;
+}
+
+.footer__items {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+#sidebar__btn {
+  background-color: #f1f5f8;
+  border: none;
+  position: fixed;
+  right: 50px;
+  top: 42px;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#title__btn:hover {
+  transition: all ease-in-out 1s;
+  transform: rotate(360deg);
+}
+
+@media screen and (max-width: 675px) {
+  #sidebar__btn {
+    display: none;
+  }
+
+  #sidebar__container {
+    width: 100vh;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#sidebar__container {
+  transform: translate(0px);
+  transition: all ease-in-out 0.8s;
+}
+
+#sidebar__container.active {
+  transform: translate(-400px);
+  transition: all ease-in-out 0.8s;
+}
